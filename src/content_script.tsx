@@ -8,7 +8,7 @@ const handleAutoDope = (autoDope: boolean) => {
       if (likeButton) {
         likeButton.click();
       };
-    }, 1000)
+    }, 5000)
     console.log("AutoDope enabled");
   } else {
     if (autoDopeInterval) {
