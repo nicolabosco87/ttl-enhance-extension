@@ -2,21 +2,20 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 const Options = () => {
-  const [color, setColor] = useState<string>("");
-  const [status, setStatus] = useState<string>("");
-  const [like, setLike] = useState<boolean>(false);
+  const [autoDope, setautoDope] = useState(false);
+  const [status, setStatus] = useState("");
+
+
 
   useEffect(() => {
     // Restores select box and checkbox state using the preferences
     // stored in chrome.storage.
     chrome.storage.sync.get(
       {
-        favoriteColor: "red",
-        likesColor: true,
+        autoDope: false,
       },
       (items) => {
-        setColor(items.favoriteColor);
-        setLike(items.likesColor);
+        setautoDope(items.autoDope);
       }
     );
   }, []);
@@ -25,8 +24,7 @@ const Options = () => {
     // Saves options to chrome.storage.sync.
     chrome.storage.sync.set(
       {
-        favoriteColor: color,
-        likesColor: like,
+        autoDope,
       },
       () => {
         // Update status to let user know options were saved.
@@ -42,24 +40,13 @@ const Options = () => {
   return (
     <>
       <div>
-        Favorite color: <select
-          value={color}
-          onChange={(event) => setColor(event.target.value)}
-        >
-          <option value="red">red</option>
-          <option value="green">green</option>
-          <option value="blue">blue</option>
-          <option value="yellow">yellow</option>
-        </select>
-      </div>
-      <div>
         <label>
           <input
             type="checkbox"
-            checked={like}
-            onChange={(event) => setLike(event.target.checked)}
+            checked={autoDope}
+            onChange={(event) => setautoDope(event.target.checked)}
           />
-          I like colors.
+          Use AutoDope
         </label>
       </div>
       <div>{status}</div>
