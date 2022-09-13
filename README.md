@@ -1,46 +1,27 @@
-# Chrome Extension TypeScript Starter
+# TTL enhance extension
 
-![build](https://github.com/chibat/chrome-extension-typescript-starter/workflows/build/badge.svg)
+Chrome Extension that adds some features into TTL:
 
-Chrome Extension, TypeScript and Visual Studio Code
+- AutoDope
 
-## Prerequisites
+## Load extension to chrome
 
-* [node + npm](https://nodejs.org/) (Current Version)
+Load `release` directory as "Load unpacked"
 
-## Option
+## Development
 
-* [Visual Studio Code](https://code.visualstudio.com/)
+### Project Structure
 
-## Includes the following
+- src/typescript: TypeScript source files
+- src/assets: static files
+- dist: Chrome Extension directory
+- dist/js: Generated JavaScript files
 
-* TypeScript
-* Webpack
-* React
-* Jest
-* Example Code
-    * Chrome Storage
-    * Options Version 2
-    * content script
-    * count up badge number
-    * background
-
-## Project Structure
-
-* src/typescript: TypeScript source files
-* src/assets: static files
-* dist: Chrome Extension directory
-* dist/js: Generated JavaScript files
-
-## Setup
+### Setup
 
 ```
 npm install
 ```
-
-## Import as Visual Studio Code project
-
-...
 
 ## Build
 
@@ -55,16 +36,3 @@ npm run build
 ```
 npm run watch
 ```
-
-### Visual Studio Code
-
-Run watch mode.
-
-type `Ctrl + Shift + B`
-
-## Load extension to chrome
-
-Load `dist` directory
-
-## Test
-`npx jest` or `npm run test`

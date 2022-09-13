@@ -37,7 +37,8 @@ jobs:
       with:
         type: 'zip'
         filename: 'release-${{ steps.package-version.outputs.current-version}}.zip'
-        path: dist
+        path: /
+        directory: dist
         exclusions: '*.git* /*node_modules/* .editorconfig'
 
     - name: Release
