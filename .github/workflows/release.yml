@@ -37,7 +37,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'release-${{ steps.package-version.outputs.current-version}}.zip'
-        path: /
+        path: ./
         directory: dist
         exclusions: '*.git* /*node_modules/* .editorconfig'
 
@@ -48,7 +48,7 @@ jobs:
         automatic_release_tag: "latest"
         prerelease: false
         title: release-${{ steps.package-version.outputs.current-version}}
-        files: release-${{ steps.package-version.outputs.current-version}}.zip
+        files: dist/release-${{ steps.package-version.outputs.current-version}}.zip
           
 
     
