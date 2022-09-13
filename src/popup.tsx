@@ -18,7 +18,6 @@ const Popup = () => {
     );
   }, []);
 
-  
   const saveOptions = () => {
     console.log("saveOptions", autoDope);
 
@@ -36,73 +35,13 @@ const Popup = () => {
         return () => clearTimeout(id);
       }
     );
-
-    // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    //   const tab = tabs[0];
-    //   if (tab.id) {
-    //     chrome.tabs.sendMessage(
-    //       tab.id,
-    //       {
-    //         autoDope,
-    //       },
-    //       (msg) => {
-    //         console.log("result message:", msg);
-    //       }
-    //     );
-    //   }
-    // });
   };
 
-  // const [currentURL, setCurrentURL] = useState<string>();
-
-  // useEffect(() => {
-  //   chrome.action.setBadgeText({ text: count.toString() });
-  // }, [count]);
-
-  // useEffect(() => {
-  //   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-  //     setCurrentURL(tabs[0].url);
-  //   });
-  // }, []);
-
-  // const changeBackground = () => {
-  //   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-  //     const tab = tabs[0];
-  //     if (tab.id) {
-  //       chrome.tabs.sendMessage(
-  //         tab.id,
-  //         {
-  //           autoDope,
-  //         },
-  //         (msg) => {
-  //           console.log("result message:", msg);
-  //         }
-  //       );
-  //     }
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-  //     const tab = tabs[0];
-  //     if (tab.id) {
-  //       chrome.tabs.sendMessage(
-  //         tab.id,
-  //         {
-  //           autoDope,
-  //         },
-  //         (msg) => {
-  //           console.log("result message:", msg);
-  //         }
-  //       );
-  //     }
-  //   });
-  // }, [autoDope])
-
   return (
-    <>
+    <div style={{ minWidth: 250 }}>
+      <h2>TTL Enhance</h2>
       <div>
-        <label>
+        <label style={{ fontSize: 16 }}>
           <input
             type="checkbox"
             checked={autoDope}
@@ -111,9 +50,30 @@ const Popup = () => {
           Use AutoDope
         </label>
       </div>
-      <div>{status}</div>
-      <button onClick={saveOptions}>Save</button>
-    </>
+      <div style={{ marginTop: 10, marginBottom: 10 }}>{status}</div>
+      <div style={{ textAlign: "right" }}>
+        <button
+          style={{
+            cursor: "pointer",
+            outline: 0,
+            color: "#fff",
+            backgroundColor: "#0d6efd",
+            borderColor: "#0d6efd",
+            display: "inline-block",
+            fontWeight: 400,
+            lineHeight: 1.5,
+            textAlign: "center",
+            border: "1px solid transparent",
+            padding: "6px 12px",
+            fontSize: 16,
+            borderRadius: ".25rem",
+          }}
+          onClick={saveOptions}
+        >
+          Save
+        </button>
+      </div>
+    </div>
   );
 };
 
